@@ -31,7 +31,7 @@ namespace Assignment1_S19
             int[] arr = new int[] { 1, 2, 3, 2, 2, 1, 3, 2 };
             computeFrequency(arr);
 
-            // write your self-reflection here as a comment
+            // It’s great to see that person who is new to Visual Studio, prepares himself for the course.
 
         }
 
@@ -48,7 +48,6 @@ namespace Assignment1_S19
                     isPrime(num);
                 }
                 Console.WriteLine();
-                // Write your code here
             }
             catch
             {
@@ -65,6 +64,7 @@ namespace Assignment1_S19
                 {
                     for (i = 2; i <= n / 2; i++)
                     {
+                        // condition for prime number
                         if (n % i == 0)
                         {
                             ctr++;
@@ -72,6 +72,7 @@ namespace Assignment1_S19
                         }
                     }
                     if (ctr == 0 && n != 1)
+                    // condition to ignore n=1
                     {
                         Console.Write("{0} ", n);
                     }
@@ -95,9 +96,11 @@ namespace Assignment1_S19
                 {
                     res += (factorial(i)) * term / (i + 1);
                     term = term * (-1);
+                    // condition for result and changing the sign for addition in every step
                 }
 
                 return Math.Round(res, 3);
+                // To round off the decimal to three digits
             }
             catch
             {
@@ -128,9 +131,11 @@ namespace Assignment1_S19
                     remainder = n % 2;
                     n /= 2;
                     result = remainder.ToString() + result;
+                    // condition to store the quotient and remainder and simple math operation
 
                 }
                 return Convert.ToInt64(result);
+                // The above step converts a string to long
             }
             catch
             {
@@ -155,6 +160,7 @@ namespace Assignment1_S19
                     sum = sum + reminder * power;
 
                     power = power * 2;
+                    // Simple conditions for calculating the reminder for converting binary to decimal and num for the next step calculations
                 }
 
                 return sum;
@@ -178,10 +184,12 @@ namespace Assignment1_S19
                     for (space = 1; space <= n - i; ++space)
                     {
                         Console.Write(" ");
+                        // condition for providing spaces
                     }
                     while (k != 2 * i - 1)
                     {
                         Console.Write("*");
+                        // condition to print * at the location
                         ++k;
                     }
                     Console.WriteLine();
@@ -203,10 +211,13 @@ namespace Assignment1_S19
                     .GroupBy(num => num)
                     .OrderBy(group => group.Key)
                     .Select(group => new { value = group.Key, count = group.Count() });
+                // Using a Linq group by the order we like it to be
                 Console.WriteLine(String.Format("{0,2} {1,2}", "Number", "Frequency"));
+                // Giving a position for our output
                 foreach (var item in output)
                 {
                     Console.WriteLine(String.Format("|{0,3}|{1,3}|", item.value, item.count.ToString()));
+                    // condition for differentiating our output with a bar ’|’
                 }
                 Console.ReadLine();
             }
